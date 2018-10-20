@@ -1,72 +1,75 @@
 //这是topBar样式
+@import "var";
+@import "reset";
 .le_topBar{
   position: absolute;
   left: 0;
   top: 0;
   height: 45px;
+  z-index: 9999;
   background-color: @baseColor;
   width: 100%;
-    a{
-      display: block;
-      width: 45px;
-      height: 45px;
-      position: absolute;
-      top: 0;
-      text-align: center;
-      &.topBar_left{
-        left: 0;
-      }
-      &.topBar_right{
-        right: 0;
-      }
-      span{
-        font-size: 20px;
-        color: #fff;
-        width: 100%;
-        height: 100%;
-        display: block;
-        line-height: 45px;
-      }
+  a{
+    display: block;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    &.topBar_left{
+      left: 0;
     }
-    .topBar_middle{
-      font-size: 16px;
-      font-weight: 400;
+    &.topBar_right{
+      right: 0;
+    }
+    span{
+      font-size: 20px;
       color: #fff;
-      text-align: center;
-      line-height: 45px;
       width: 100%;
-      margin: 0;
+      height: 100%;
+      display: block;
+      line-height: 45px;
     }
+  }
+  .topBar_title{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 //这是底部tabBar样式
 .le_tabBar{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 55px;
-    background-color:@baseColor;
-    a{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 9999;
+  background-color:@baseColor;
+  a{
+    display: block;
+    width: 25%;
+    color: #fff;
+    float: left;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    span{
       display: block;
-      width: 25%;
-      color: #fff;
-      float: left;
-      height: 100%;
-      font-size: 20px;
-      text-align: center;
-      padding-top: 10px;
-      span{
-        display: block;
-        font-size: 16px;
-        margin-top: 5px;
-      }
+      font-size: 16px;
+      margin-top: 5px;
     }
-    .active{
-      color: orange;
-    }
+  }
+  .active{
+    color: orange;
+  }
 }
-
 .hide{
   display: none !important;
 }

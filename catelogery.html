@@ -11,22 +11,56 @@
     <title>乐淘网</title>
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="less/index/index.css">
+    <link rel="stylesheet" href="less/common.css">
+    <link rel="stylesheet" href="less/category/category.css">
 </head>
 <body>
-    <div class="le_container">
         <!--顶部topBar-->
         <header class="le_topBar">
-            <a href="#" class="topBar_left"><span class="fa fa-arrow-left"></span></a>
-            <h3 class="topBar_middle">乐淘云购</h3>
-            <a href="#" class="topBar_right"><span class="fa fa-search"></span></a>
+            <a href="javascript:history.back()" class="topBar_left"><span class="fa fa-arrow-left"></span></a>
+            <a href="search.html" class="topBar_right"><span class="fa fa-search"></span></a>
         </header>
+        <!--底部content-->
         <footer class="le_tabBar">
             <a href="index.html" class="le_home fa fa-home"><span>首页</span></a>
             <a href="catelogery.html" class="le_categroy fa fa-bars active"><span>分类</span></a>
             <a href="#" class="le_shopcar fa fa-shopping-cart"><span>购物车</span></a>
             <a href="#" class="le_user fa fa-user"><span>会员中心</span></a>
         </footer>
-    </div>
+
+        <div class="le_container">
+            <div class="le_middle_content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容 ,动态渲染-->
+                        <div class="menu_left clearfix"><!--todo--></div>
+                        <div class="menu_right"><!--todo--></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="lib/mui/js/mui.min.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-native.js"></script>
+    <script id="menu-artemplate" type="text/item-artemplate">
+        <ul>
+            <%for(var i =0 ;i<data.length ; i++){%>
+                <li class="<%=i==0?'now':''%>"><a href="javascript:;" data-id="<%=data[i]['id']%>"><%=data[i]["categoryName"]%></a></li>
+            <%}%>
+        </ul>
+    </script>
+    <script id="item-artemplate" type="text/item-artemplate">
+        <ul>
+            <%if(data.length>0){%>
+                <% for(var i=0;i<data.length;i++){%>
+                <li><a href="javascript:;" data-id="<%=data[i].id%>"><img src="<%=data[i].brandLogo%>" alt=""><p><%=data[i].brandName%></p></a></li>
+                <%}%>
+            <%}else{%>
+                <p>当前目录没有数据</p>
+            <%}%>
+        </ul>
+    </script>
+    <script src="js/category.js"></script>
 </body>
 </html>
