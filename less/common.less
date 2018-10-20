@@ -1,0 +1,32 @@
+.barIconCommon(){
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 45px;
+  top: 0;
+  font-size: 16px;
+  color: @topBarSpanColor;
+  text-align: center;
+  &.hide{
+    display: none;
+  }
+}
+
+.topBar_left{
+  .barIconCommon();
+  left: 0;
+}
+.topBar_right{
+  right: 0;
+  .barIconCommon();
+}
+.topBar_middle{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight:400;
+    display: block;
+    color: #fff;
+    text-align:center;
+}

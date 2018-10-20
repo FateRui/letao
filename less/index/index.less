@@ -1,0 +1,110 @@
+@import "../reset";
+@import "../var";
+@import "../common";
+body{
+  background: #fff;
+}
+.le_container{
+    position: absolute;
+    top:0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 55px;
+      .le_topBar{
+        width: 100%;
+        height: 45px;
+        background: @baseColor;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 45px;
+        text-align: center;
+        }
+      .le_tabBar{
+        width: 100%;
+        height: 55px;
+        background: @baseColor;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        a{
+          width:25%;
+          height: 50px;
+          display: block;
+          font-size: 20px;
+          float: left;
+          color: #fff;
+          text-align: center;
+          padding: 5px;
+          &.now{
+            color: orange;
+          }
+          span{
+            display: block;
+            padding-top: 5px;
+            font-size: 16px;
+          }
+        }
+      }
+      .le_middle_content{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .mui-scroll-wrapper{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    .le_nav
+    {
+      width: 100%;
+      padding: 10px;
+        a{
+          display: block;
+          float: left;
+          width: 33.33%;
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+    }
+
+  .le_product{
+    padding: 10px;
+    .itemBox{
+      float: left;
+      width: 48%;
+      background: #fff;
+      margin-top:10px;
+      box-shadow: 0 0 3px #ddd;
+      img{
+        display: block;
+        width: 100%;
+      }
+      p:nth-child(2){
+        padding: 0 10px;
+      }
+      p:nth-child(3){
+        text-align: center;
+        .old{
+          color: darkred;
+        }
+      }
+      button{
+        display: block;
+        color: #fff;
+        background: @baseColor;
+        margin: 10px auto 10px;
+      }
+
+    }
+    .itemBox:nth-child(2n){
+      margin-left: 4%;
+    }
+  }
+
+
+}
