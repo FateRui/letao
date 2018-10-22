@@ -17,3 +17,21 @@ LE.getParaFormUrl=function() {
     return search;
 }
 
+LE.login="login.html";
+LE.loginAjax=function (url,type,paras,callbackUrl,callabck) {
+
+    $.ajax({url:url,type:type,data:paras,success:function (res) {
+        if (res.error==400){
+            //去登陆页，顺便带上地址
+            location.href=LE.login+"?callback="+callbackUrl;
+            return false;
+        }
+        else
+        {
+            callabck||callabck(res);
+        }
+    },error:function f() {
+        mui.toast("服务器繁忙");
+    }});
+
+}

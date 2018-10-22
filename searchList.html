@@ -57,7 +57,7 @@
             <%for(var i=0 ;i<data.length;i++){%>
             <%var item =data[i];%>
             <div class="product_item">
-                <a href="product.html?productId=<%=item.id%>">
+                <a href="product.html?id=<%=item.id%>">
                     <% if(item.pic&&item.pic[0]){%>
                     <img src="<%=item.pic[0].picAddr%>" alt="图片">
                     <%}else{%>

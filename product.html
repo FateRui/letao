@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="乐淘是傻逼">
+    <meta name="description" content="傻逼会晒黑和 i 爱好">
+    <!--<meta content="telephone=no" name="forma">-->
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <title>乐淘网</title>
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/product/prduct.css">
+    <link rel="stylesheet" href="less/common.css">
+</head>
+<body>
+        <header class="le_topBar">
+            <a href="javascript:history.back();" class="topBar_left"><span class="fa fa-arrow-left"></span></a>
+            <h3 class="topBar_title">商品详情</h3>
+            <a href="index.html" class="topBar_right"><span class="fa fa-home"></span></a>
+        </header>
+        <footer class="footer">
+            <div class="option-left">
+                <a href="cart.html"><span class="fa fa-shopping-cart"></span></a>
+            </div>
+            <div class="option-right">
+                <a href="javascript:;" class="addShopCar">加入购物车</a>
+                <a href="javascript:;" class="buy">立即购买</a>
+            </div>
+        </footer>
+
+        <div class="le_container">
+        <div class="le_middle_content">
+
+            <div class="mui-scroll-wrapper">
+                <div class="mui-icon mui-icon-spinner rotateAnimate"></div>
+                <div class="mui-scroll">
+
+                    <div class="le_banner mui-slider">
+
+                    </div>
+
+                    <!--商品名字-->
+                    <div class="brandName">
+                    </div>
+                    <!--商品的价格-->
+                    <div class="brandPrice">
+
+                    </div>
+                    <!--商品尺码-->
+                    <div class="brandSize">
+
+                    </div>
+                    <!--商品数量-->
+                    <div class="brandNumber">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <script src="lib/mui/js/mui.min.js"></script>
+    <script src="lib/artTemplate/template-native.js"></script>
+    <script type="text/detail-artTemplate" id="banner">
+        <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<%=data['firstImage']%>" /></a></div>
+            <% for(var i=0 ;i< data["pic"].length;i++){%>
+                <div class="mui-slider-item"><a href="javascript:;"><img src="<%=data['pic'][i]['picAddr']%>" /></a></div>
+            <%}%>
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<%=data['lastImage']%>" /></a></div>
+        </div>
+        <div class="mui-slider-indicator" style="z-index: 2">
+            <% for(var i=0 ;i< data["pic"].length;i++){%>
+                <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+            <%}%>
+        </div>
+    </script>
+    <script type="text/detail-artTemplate" id="brandTitle">
+        <p><%=data["proName"]%></p>
+    </script>
+    <script type="text/detail-artTemplate" id="brandPrice">
+        价格:<span class="nowPrice">&yen;<%=data["price"]%></span><del class="oldPrice">&yen;<%=data["oldPrice"]%></del>
+    </script>
+    <script type="text/detail-artTemplate" id="brandSize">
+        尺码:<%for(var i=0 ;i< data["size"].length;i++){%>
+                <span><%=data["size"][i]%></span>
+            <%}%>
+    </script>
+    <script type="text/detail-artTemplate" id="brandNumber">
+        数量:<div class="clearfix control">
+            <span class="jian">-</span>
+            <input type="text" readonly class="count" value="0">
+            <span class="jia">+</span>
+        </div>
+        剩余: <span class="remain"><%=data["num"]%></span>件
+    </script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

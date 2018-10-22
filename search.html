@@ -40,7 +40,9 @@
             <div class="search_history">
                 <dl>
                     <dt><span>搜索历史</span><a href="javascript:;" class="clearAll"><span class="iconfont">&#xe629;</span>清空记录</a></dt>
-                    <dd><a href="#">1223131</a><span class="close"></span></dd>
+                </dl>
+                <dl class="historyList">
+
                 </dl>
             </div>
         </div>
@@ -48,6 +50,15 @@
     <script src="lib/zepto/zepto.min.js"></script>
     <script src="lib/mui/js/mui.min.js"></script>
     <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <script src="lib/artTemplate/template-native.js"></script>
+    <script type="text/history-artTemplate" id="history-artTemplate">
+        <%if(data){%>
+            <%for(var index=0;index<data.length;index++){%>
+                <dd><a href="searchList.html?key=<%=data[index]%>"><%=data[index]%></a><span class="close" data-id=<%=index%></span></dd>
+            <%}%>
+        <%}%>
+    </script>
+    <script src="lib/jsCookie/jscookie.js"></script>
     <script src="js/search.js"></script>
 </body>
 </html>
