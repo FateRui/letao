@@ -18,6 +18,5 @@ $(function () {
         location.href="searchList.html?key="+key;
     });
 
-
 });
 
