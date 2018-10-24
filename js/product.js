@@ -82,11 +82,12 @@ $(function () {
 
         // console.log("size"+productSize,"count"+count,"id"+paras.id);
         LE.loginAjax("/cart/addCart","post",{productId:parseInt(paras.id),num:count,size:productSize},location.href,function (res) {
+
             if (res.success==true){
                 mui.confirm("添加购物车成功,是否跳转到购物车", "恭喜",["是","否"], function (e) {
                    if (e.index==0) {
                        //跳转到购物车
-                        location.href="shopCar.html";
+                        location.href="cart.html";
                    }
                 } ,"div");
             }

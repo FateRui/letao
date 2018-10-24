@@ -28,7 +28,7 @@ LE.loginAjax=function (url,type,paras,callbackUrl,callabck) {
         }
         else
         {
-            callabck||callabck(res);
+            if (callabck)callabck(res);
         }
     },error:function f() {
         mui.toast("服务器繁忙");

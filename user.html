@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="乐淘是傻逼">
+    <meta name="description" content="傻逼会晒黑和 i 爱好">
+    <!--<meta content="telephone=no" name="forma">-->
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <title>乐淘网</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/common.css">
+    <link rel="stylesheet" href="less/user/user.css">
+</head>
+<body>
+    <!--顶部topBar-->
+    <header class="le_topBar">
+        <a href="index.html" class="topBar_left"><span class="fa fa-arrow-left"></span></a>
+        <h3 class="topBar_title">个人中心</h3>
+        <a href="javascript:;" class="topBar_right hide"><span class="fa fa-refresh"></span></a>
+    </header>
+    <!--底部tabbar-->
+    <footer class="le_tabBar">
+        <a href="index.html" class="le_home fa fa-home "><span>首页</span></a>
+        <a href="catelogery.html" class="le_categroy fa fa-bars"><span>分类</span></a>
+        <a href="cart.html" class="le_shopcar fa fa-shopping-cart "><span>购物车</span></a>
+        <a href="user.html" class="le_user fa fa-user active"><span>会员中心</span></a>
+    </footer>
+
+    <div class="le_container">
+        <div class="le_middle_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right personal">
+                                <img src="images/user.jpg" alt="">
+                                <div class="content">
+                                    <p class="load">登录中...</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">账户与安全</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">我的购物车</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">收货地址管理</a>
+                        </li>
+                    </ul>
+
+                    <button class="logout">退出登陆</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-native.js"></script>
+    <script type="text/artTemplate" id="content">
+        <img src="images/user.jpg" alt="">
+        <div class="content">
+            <span class="name"><%=data["username"]%></span>
+            <p>绑定手机: <span><%=data["mobile"]%></span></p>
+        </div>
+    </script>
+    <script src="lib/mui/js/mui.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/user.js"></script>
+</body>
+</html>

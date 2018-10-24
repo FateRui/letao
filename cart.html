@@ -1,10 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <title>乐淘网</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="less/cart/cart.css">
 </head>
 <body>
+    <!--顶部topBar-->
+    <header class="le_topBar">
+        <a href="javascript:history.back();" class="topBar_left"><span class="fa fa-arrow-left"></span></a>
+        <h3 class="topBar_title">购物车</h3>
+        <a href="javascript:;" class="topBar_right"><span class="fa fa-refresh"></span></a>
+    </header>
+    <!--底部tabbar-->
+    <footer class="le_tabBar">
+        <a href="index.html" class="le_home fa fa-home "><span>首页</span></a>
+        <a href="catelogery.html" class="le_categroy fa fa-bars"><span>分类</span></a>
+        <a href="cart.html" class="le_shopcar fa fa-shopping-cart active"><span>购物车</span></a>
+        <a href="user.html" class="le_user fa fa-user"><span>会员中心</span></a>
+    </footer>
+    <div class="sum">
+        订单总额：&yen;<span class="totle">0.00</span> <a href="#">生成订单</a>
+    </div>
 
+    <div class="le_container">
+        <div class="le_middle_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-table productList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-native.js"></script>
+<script type="text/template" id="item">
+    <%for(var index=0 ; index< data.length; index++){%>
+    <li class="mui-table-view-cell mui-transitioning ">
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-blue mui-icon mui-icon-compose edit" style="transform: translate(0px, 0px);"></a>
+            <a class="mui-btn mui-btn-red mui-icon mui-icon-trash delete" style="transform: translate(-90px, 0px);"></a>
+        </div>
+        <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
+            <div class="mui-table-cell mui-medias">
+                <%
+                    var addr ="/mobile/images/none.jpg";
+                    if(data[index]["pic"][0]&&data[index]["pic"][0].picAddr){
+                    addr =data[index]["pic"][0].picAddr;
+                    }
+                %>
+                <img src="<%=addr%>"  class="productImage">
+                <div class="content">
+                    <p class="name"><%=data[index]["proName"]%></p>
+                    <p class="info">
+                        <span class="price">&yen;<%=data[index]["price"]%></span>
+                        <span class="oldPrice">&yen;<%=data[index]["oldPrice"]%></span>
+                        <span class="number">X<%=data[index]["num"]%>双</span>
+                    </p>
+                    <p>鞋码:<span class="size"><%=data[index]["size"]%></span></p>
+                </div>
+                <input type="checkbox" class="check" data-id="<%=index%>">
+            </div>
+        </div>
+    </li>
+    <%}%>
+</script>
+<script type="text/detail-artTemplate" id="brandSize">
+    尺码:<%for(var i=0 ;i< data["size"].length;i++){%>
+    <span><%=data["size"][i]%></span>
+    <%}%>
+</script>
+<script type="text/detail-artTemplate" id="brandNumber">
+    数量:<div class="clearfix control">
+        <span class="jian">-</span>
+        <input type="text" readonly class="count" value="0">
+        <span class="jia">+</span>
+    </div>
+    剩余: <span class="remain"><%=data["num"]%></span>件
+</script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="js/commons.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>

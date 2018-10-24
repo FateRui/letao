@@ -1,0 +1,235 @@
+/*******reset*******/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+body {
+  font-size: 14px;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+input,
+textarea {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+textarea {
+  resize: none;
+}
+/*-------reset-----end*/
+/*****common*****/
+.f_left {
+  float: left;
+}
+.f_right {
+  float: right;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
+/*-------common-----end*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../fonts/iconfont.eot');
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../fonts/iconfont.woff') format('woff'), url('../fonts/iconfont.ttf') format('truetype'), url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.le_topBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 45px;
+  z-index: 9999;
+  background-color: #006699;
+  width: 100%;
+}
+.le_topBar a {
+  display: block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+.le_topBar a.topBar_left {
+  left: 0;
+}
+.le_topBar a.topBar_right {
+  right: 0;
+}
+.le_topBar a span {
+  font-size: 20px;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 45px;
+}
+.le_topBar .topBar_title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  width: 100%;
+  margin: 0;
+}
+.le_tabBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 9999;
+  background-color: #006699;
+}
+.le_tabBar a {
+  display: block;
+  width: 25%;
+  color: #fff;
+  float: left;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
+.le_tabBar a span {
+  display: block;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.le_tabBar .active {
+  color: orange;
+}
+.hide {
+  display: none !important;
+}
+.le_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 45px 0 55px;
+}
+.le_container .le_middle_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.le_container .le_middle_content .mui-scroll-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.le_container .searchBar {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.le_container .searchBar .searchInput {
+  border: 1px solid #006699;
+}
+.le_container .searchBar .searchSubmit {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 40px;
+  width: 60px;
+  text-align: center;
+  background: #006699;
+  line-height: 40px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #fff;
+}
+.le_container .product_order {
+  height: 100px;
+  margin-top: 10px;
+  background: #FFF;
+  padding: 0 10px;
+  height: 30px;
+}
+.le_container .product_order a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
+  height: 30px;
+  color: #666;
+}
+.le_container .product_order a.now {
+  color: orange;
+}
+.le_container .le_product .product_item a {
+  background: #fff;
+  width: 47%;
+  float: left;
+  margin-left: 2%;
+  margin-top: 10px;
+  padding: 10px;
+}
+.le_container .le_product .product_item a img {
+  width: 100%;
+  height: auto;
+}
+.le_container .le_product .product_item a p:nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding: 0 10px;
+}
+.le_container .le_product .product_item a p:nth-child(3) {
+  text-align: center;
+}
+.le_container .le_product .product_item a p:nth-child(3) .nowPrice {
+  color: red;
+}
+.le_container .le_product .product_item a p:nth-child(3) .oldPrice {
+  color: #666;
+}
+.le_container .le_product .product_item a button {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  background: #006699;
+  line-height: 40px;
+  padding: 0;
+  color: #fff;
+}
+/*# sourceMappingURL=searchList.css.map */
